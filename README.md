@@ -16,9 +16,9 @@ An assortment of methods for bam|sam|cram files
 This program adds four additional optional tags to the bam file. 
 
 
-| tag  | type  | def  | 
+| tag  | type  | definition  | 
 |---|---|---|
-| XB  | I  | The beginning of the alignment  |
-| XE  | I  | The end of the alignment   |
-| XP  | f  | The percent identity of the alignment (length - NM - clipping)  |
-| XL  | I  | The length of the alignment block  |
+| XB  | I (uint32_t) | The beginning of the alignment  |
+| XE  | I (uint32_t) | The end of the alignment   |
+| XP  | f (float) | The percent identity of the alignment (length - NM - clipping)  |
+| XL  | I (Uint32_t) | The length of the alignment block  |
