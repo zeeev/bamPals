@@ -1,5 +1,5 @@
 # bamPals
-an assortment of methods for bam|sam|cram files
+An assortment of methods for bam|sam|cram files
 
 ## Dependencies
    htslib installed
@@ -10,5 +10,15 @@ an assortment of methods for bam|sam|cram files
    ```
         HTSROOT=/net/eichler/vol8/home/zevk/tools/htslib/
    ```
-   This is the path to HTSLIB
    3. Run the make command.
+## enrich_optional_tags
+
+This program adds four additional optional tags to the bam file. 
+
+
+| tag  | type  | def  | 
+|---|---|---|
+| XB  | I  | The beginning of the alignment  |
+| XE  | I  | The end of the alignment   |
+| XP  | f  | The percent identity of the alignment (length - NM - clipping)  |
+| XL  | I  | The length of the alignment block  |
