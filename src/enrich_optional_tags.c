@@ -49,7 +49,7 @@ int target_consumed(uint32_t *cigar, uint32_t ncigar){
 
 int main(int argc, char **argv){
 
-    if(argc != 2){
+    if(argc != 3){
         fprintf(stderr, "USAGE: enrichTags input.[sam|bam|cram] output.bam\n");
         exit(1);
     }
