@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Getopt::Long;
+
+#-----------------------------------------------------------------------------
+#----------------------------------- MAIN ------------------------------------
+#-----------------------------------------------------------------------------
+my $usage = "
+
+Synopsis:
+
+anno_to_bed <How the hell do you use this thing>
+
+Description:
+
+No really, how the hell do you use this thing!
+
+";
+
+
+my ($help);
+my $opt_success = GetOptions('help'    => \$help,
+			      );
+
+die $usage if $help || ! $opt_success;
+
+
+while (<STDIN>) {
+    
+    next if $_ =~ /^@/;
+
+    my $start = $1 if $_ =~ /XB:i:(.*?)\s+/;
+    my $end   = $1 if $_ =~ /XE:i:(.*?)\s+/;
+    my $per   = $1 if $_ =~ /XP:f:(.*?)\s+/;
+    my $len   = $1 if $_ =~ /XL:i:(.*?)\s+/;
+
+    my @line = split /\t/, $_;
+    my $seqid = $line[2];
+    my $qname = $line[0];
+    
+    print "$seqid\t$start\t$end\t$len\t$per\t$qname\n";
+    
+
+}
+
+#-----------------------------------------------------------------------------
+#-------------------------------- SUBROUTINES --------------------------------
+#-----------------------------------------------------------------------------
+
+sub {
+
+}
+
